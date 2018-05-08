@@ -1,0 +1,40 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+revisionHistoryLimit: 1
+image:
+  repository: mycluster.icp:8500/default
+  name: notification-twitter
+  tag: latest
+  pullPolicy: Always
+  containerPort:
+    http: 9080
+    https: 9443
+  resources:
+    requests:
+      cpu: 200m
+      memory: 300Mi
+service:
+  # Change this to ClusterIP before releasing charts so microservices can only be reached through the ingress
+  type: NodePort
+  servicePort:
+    http: 9080
+    https: 9443
+secret:
+  twitter:
+    create: false
+    # consumerKey: TFwa8ifAmxFmns02QEAm3qt2v
+    consumerKey: VEZ3YThpZkFteEZtbnMwMlFFQW0zcXQydg==
+    # consumerSecret: 7B07ZCGUcM52bdpEuhkZG3EoP85iY69Ie9zUQwVG7Ll6Pvo0Hv
+    consumerSecret: N0IwN1pDR1VjTTUyYmRwRXVoa1pHM0VvUDg1aVk2OUllOXpVUXdWRzdMbDZQdm8wSHY=
+    # accessToken: 919153883989073920-vjMloUBKs8UG8O1O1zLQozFtyTQq9tL
+    accessToken: OTE5MTUzODgzOTg5MDczOTIwLXZqTWxvVUJLczhVRzhPMU8xekxRb3pGdHlUUXE5dEw=
+    # accessTokenSecret: d6UE1vjs1NKMJMaQ7ofWRElJxWh9ePJQjgOOdZmSf28XQ
+    accessTokenSecret: ZDZVRTF2anMxTktNSk1hUTdvZldSRWxKeFdoOWVQSlFqZ09PZFptU2YyOFhR
+  jwt:
+    create: false
+    secret_name: stocktrader-jwt
+    # audience: stock-trader
+    audience: c3RvY2stdHJhZGVy
+    # issuer: http://stock-trader.ibm.com
+    issuer: aHR0cDovL3N0b2NrLXRyYWRlci5pYm0uY29t

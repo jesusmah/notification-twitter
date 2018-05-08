@@ -1,0 +1,5 @@
+apiVersion: v1
+description: A Helm chart for the Twitter notification microservice of the StockTrader application.
+name: notification-twitter
+version: 1.0.0
+appVersion: icp-v1.0
