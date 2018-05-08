@@ -11,5 +11,5 @@ spec:
       paths:
       - path: /notification
         backend:
-          serviceName: {{ .Release.Name }}-{{ .Chart.Name }}
+          serviceName: notification-service
           servicePort: {{ .Values.service.servicePort.https }}
