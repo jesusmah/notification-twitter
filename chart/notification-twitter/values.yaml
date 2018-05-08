@@ -23,6 +23,7 @@ service:
 secret:
   twitter:
     create: false
+    secret_name: stocktrader-twitter
     # consumerKey: TFwa8ifAmxFmns02QEAm3qt2v
     consumerKey: VEZ3YThpZkFteEZtbnMwMlFFQW0zcXQydg==
     # consumerSecret: 7B07ZCGUcM52bdpEuhkZG3EoP85iY69Ie9zUQwVG7Ll6Pvo0Hv
